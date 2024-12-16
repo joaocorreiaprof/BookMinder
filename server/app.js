@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const pool = require("./db/db");
+const booksRoutes = require("./routes/booksRoutes");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,15 +14,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Inventory Application API!");
 });
 
-app.get("/api/books", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM books");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("Error querying database:", err);
-    res.status(500).json({ error: "Failed to fetch books" });
-  }
-});
+app.use("/api", booksRoutes);
 
 // Start Server
 app.listen(PORT, () => {
