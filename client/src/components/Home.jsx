@@ -20,6 +20,9 @@ const Home = () => {
         <li>
           <Link to="/genres">View all genres</Link>
         </li>
+        <li>
+          <Link to="/authors">View all authors</Link>
+        </li>
       </ul>
     </>
   );

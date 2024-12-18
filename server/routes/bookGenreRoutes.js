@@ -5,6 +5,7 @@ const {
   getBookGenres,
   getBookGenreByID,
   deleteBookGenre,
+  getBooksByGenre,
 } = require("../controllers/bookGenreController");
 
 // Add a new book-genre association
@@ -18,5 +19,8 @@ router.get("/book-genres/:id", getBookGenreByID);
 
 // Delete a book-genre association
 router.delete("/book-genres/:id", deleteBookGenre);
+
+// Get books by genre
+router.get("/books-by-genre/:genreId", getBooksByGenre);
 
 module.exports = router;

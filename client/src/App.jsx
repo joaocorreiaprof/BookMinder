@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Books from "./components/Books";
 import Genres from "./components/Genres";
+import Authors from "./components/Authors";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/books" element={<Books />} />
         <Route path="/genres" element={<Genres />} />
+        <Route path="/authors" element={<Authors />} />
       </Routes>
     </Router>
   );

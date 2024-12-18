@@ -70,9 +70,27 @@ const deleteBookGenre = async (req, res) => {
   }
 };
 
+const getBooksByGenre = async (req, res) => {
+  const { genreId } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT b.*
+       FROM books b
+       JOIN book_genres bg ON b.book_id = bg.book_id
+       WHERE bg.genre_id = $1`,
+      [genreId]
+    );
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error("Error fetching books by genre:", err);
+    res.status(500).json({ error: "Failed to fetch books by genre" });
+  }
+};
+
 module.exports = {
   addBookGenre,
   getBookGenres,
   getBookGenreByID,
   deleteBookGenre,
+  getBooksByGenre,
 };
