@@ -6,9 +6,17 @@ const Books = () => {
   const [books, setBooks] = useState([]);
   const [searchParams] = useSearchParams();
   const genreId = searchParams.get("genre");
+  const authorId = searchParams.get("author");
 
   useEffect(() => {
-    const endpoint = genreId ? `/api/books-by-genre/${genreId}` : "/api/books";
+    let endpoint = "/api/books";
+
+    if (genreId) {
+      endpoint = `/api/books-by-genre/${genreId}`;
+    }
+    if (authorId) {
+      endpoint = `/api/books-by-author/${authorId}`;
+    }
 
     api
       .get(endpoint)
@@ -16,11 +24,17 @@ const Books = () => {
         setBooks(response.data);
       })
       .catch((error) => console.error("Error fetching books:", error));
-  }, [genreId]);
+  }, [genreId, authorId]);
 
   return (
     <div>
-      <h2>{genreId ? "Books in Selected Genre:" : "All Books:"}</h2>
+      <h2>
+        {authorId
+          ? "Books in Selected Author:"
+          : genreId
+          ? "Books in Selected Genre:"
+          : "All Books:"}
+      </h2>
       {books.length > 0 ? (
         <ul>
           {books.map((book) => (
@@ -45,6 +59,7 @@ const Books = () => {
         <p>No books available</p>
       )}
       {genreId && <Link to="/genres">Back to genres</Link>}
+      {authorId && <Link to="/authors">Back to authors</Link>}
     </div>
   );
 };

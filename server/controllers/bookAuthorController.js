@@ -70,9 +70,24 @@ const deleteBookAuthor = async (req, res) => {
   }
 };
 
+const getBooksByAuthor = async (req, res) => {
+  const { authorId } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT b.* FROM books b JOIN book_authors ba ON b.book_id = ba.book_id WHERE ba.author_id = $1`,
+      [authorId]
+    );
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error("Error fetching books by author:", err);
+    res.status(500).json({ error: "Failed to fetch books by author" });
+  }
+};
+
 module.exports = {
   addBookAuthor,
   getBookAuthors,
   getBookAuthorByID,
   deleteBookAuthor,
+  getBooksByAuthor,
 };

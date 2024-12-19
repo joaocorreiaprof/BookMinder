@@ -1,6 +1,6 @@
 // bookGenreController.js
 
-const pool = require("../db/db"); // Assuming you're using a PostgreSQL database
+const pool = require("../db/db");
 
 // Add a new book-genre association
 const addBookGenre = async (req, res) => {

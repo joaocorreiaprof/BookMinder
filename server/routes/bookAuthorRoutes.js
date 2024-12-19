@@ -5,6 +5,7 @@ const {
   getBookAuthors,
   getBookAuthorByID,
   deleteBookAuthor,
+  getBooksByAuthor,
 } = require("../controllers/bookAuthorController");
 
 // Add a new book-author association
@@ -18,5 +19,8 @@ router.get("/book-authors/:id", getBookAuthorByID);
 
 // Delete a book-author association
 router.delete("/book-authors/:id", deleteBookAuthor);
+
+//Get all books from a author
+router.get("/books-by-author/:authorId", getBooksByAuthor);
 
 module.exports = router;
