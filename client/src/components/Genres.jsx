@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../components/api";
 import { useNavigate } from "react-router-dom";
+import "../styles/genres.css";
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);
@@ -20,18 +21,25 @@ const Genres = () => {
   };
 
   return (
-    <div>
-      <h2>Genres List:</h2>
+    <div className="genres-page">
+      <h2 className="page-title">Genres List:</h2>
       {genres.length > 0 ? (
-        <ul>
+        <div className="genres-container">
           {genres.map((genre) => (
-            <li key={genre.genre_id}>
-              <button onClick={() => handleGenreClick(genre.genre_id)}>
-                {genre.name}
-              </button>
-            </li>
+            <div
+              key={genre.genre_id}
+              className="genre-card"
+              onClick={() => handleGenreClick(genre.genre_id)}
+            >
+              <div className="card-front">
+                <h3>{genre.name}</h3>
+              </div>
+              <div className="card-back">
+                <p>{genre.description}</p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No genres available</p>
       )}

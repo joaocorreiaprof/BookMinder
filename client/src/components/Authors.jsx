@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../components/api";
 import { useNavigate } from "react-router-dom";
+import "../styles/authors.css";
 
 const Authors = () => {
   const [authors, setAuthors] = useState([]);
@@ -15,25 +16,25 @@ const Authors = () => {
       .catch((error) => console.error("Error fetching authors:", error));
   }, []);
 
-  const handleGenreClick = (authorId) => {
+  const handleAuthorClick = (authorId) => {
     navigate(`/books?author=${authorId}`);
   };
 
   return (
-    <div>
-      <h2>Authors List:</h2>
+    <div className="authors-page">
+      <h2 className="page-title">Authors List:</h2>
       {authors.length > 0 ? (
-        <ul>
+        <div className="authors-container">
           {authors.map((author) => (
-            <li key={author.author_id}>
-              <button onClick={() => handleGenreClick(author.author_id)}>
-                {author.name}
+            <div key={author.author_id} className="author-card">
+              <button onClick={() => handleAuthorClick(author.author_id)}>
+                <h3>{author.name}</h3>
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
-        <p>No genres available</p>
+        <p>No authors available</p>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import api from "../components/api";
+import "../styles/books.css";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -27,8 +28,8 @@ const Books = () => {
   }, [genreId, authorId]);
 
   return (
-    <div>
-      <h2>
+    <div className="books-page">
+      <h2 className="page-title">
         {authorId
           ? "Books in Selected Author:"
           : genreId
@@ -36,30 +37,44 @@ const Books = () => {
           : "All Books:"}
       </h2>
       {books.length > 0 ? (
-        <ul>
+        <div className="books-container">
           {books.map((book) => (
-            <li key={book.book_id}>
-              <h3>{book.title}</h3>
-              <p>
-                <strong>Publisher:</strong> {book.publisher}
-              </p>
-              <p>
-                <strong>Publication Year:</strong> {book.publication_year}
-              </p>
-              <p>
-                <strong>Description:</strong> {book.description}
-              </p>
-              <p>
-                <strong>Language:</strong> {book.language}
-              </p>
-            </li>
+            <div key={book.book_id} className="book-card">
+              <div className="card-front">
+                <h3>{book.title}</h3>
+              </div>
+              <div className="card-back">
+                <p>
+                  <strong>Publisher:</strong> {book.publisher}
+                </p>
+                <p>
+                  <strong>Publication Year:</strong> {book.publication_year}
+                </p>
+                <p className="description">
+                  <strong>Description:</strong> {book.description}
+                </p>
+                <p>
+                  <strong>Language:</strong> {book.language}
+                </p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>No books available</p>
       )}
-      {genreId && <Link to="/genres">Back to genres</Link>}
-      {authorId && <Link to="/authors">Back to authors</Link>}
+      <div className="navigation-links">
+        {genreId && (
+          <Link to="/genres" className="back-link">
+            Back to genres
+          </Link>
+        )}
+        {authorId && (
+          <Link to="/authors" className="back-link">
+            Back to authors
+          </Link>
+        )}
+      </div>
     </div>
   );
 };
