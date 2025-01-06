@@ -23,6 +23,23 @@ const createInventory = async (req, res) => {
   }
 };
 
+//Get inventory for books
+
+const getBooksInventory = async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT b.book_id, b.title, i.quantity
+       FROM books b
+       JOIN inventory i ON b.book_id = i.book_id
+       ORDER BY b.title ASC`
+    );
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error("Error fetching books inventory:", err);
+    res.status(500).json({ error: "Failed to fetch books inventory" });
+  }
+};
+
 // Get all inventory items
 const getInventory = async (req, res) => {
   try {
@@ -113,4 +130,5 @@ module.exports = {
   getInventoryByID,
   updateInventory,
   deleteInventory,
+  getBooksInventory,
 };

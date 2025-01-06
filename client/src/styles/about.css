@@ -1,0 +1,26 @@
+.about-container {
+  padding: 3rem 10%;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.about-description p {
+  margin-bottom: 1rem;
+}

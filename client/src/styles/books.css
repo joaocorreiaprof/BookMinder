@@ -80,13 +80,6 @@
   transform: rotateY(0deg);
 }
 
-/* Description text styling */
-.description {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
 /* Link for navigation */
 .back-link {
   display: inline-block;

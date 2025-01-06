@@ -30,6 +30,11 @@ const Genres = () => {
               key={genre.genre_id}
               className="genre-card"
               onClick={() => handleGenreClick(genre.genre_id)}
+              style={{
+                backgroundImage: `url(${genre.image_url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="card-front">
                 <h3>{genre.name}</h3>

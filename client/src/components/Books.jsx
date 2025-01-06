@@ -5,13 +5,14 @@ import "../styles/books.css";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
+  const [inventory, setInventory] = useState([]);
   const [searchParams] = useSearchParams();
   const genreId = searchParams.get("genre");
   const authorId = searchParams.get("author");
 
+  // Fetch books and inventory data
   useEffect(() => {
     let endpoint = "/api/books";
-
     if (genreId) {
       endpoint = `/api/books-by-genre/${genreId}`;
     }
@@ -19,13 +20,27 @@ const Books = () => {
       endpoint = `/api/books-by-author/${authorId}`;
     }
 
+    // Fetch books
     api
       .get(endpoint)
       .then((response) => {
         setBooks(response.data);
       })
       .catch((error) => console.error("Error fetching books:", error));
+
+    // Fetch inventory for books
+    api
+      .get("/api/books-inventory")
+      .then((response) => {
+        setInventory(response.data);
+      })
+      .catch((error) => console.error("Error fetching inventory:", error));
   }, [genreId, authorId]);
+
+  const getQuantity = (bookId) => {
+    const bookInventory = inventory.find((item) => item.book_id === bookId);
+    return bookInventory ? bookInventory.quantity : "N/A";
+  };
 
   return (
     <div className="books-page">
@@ -50,11 +65,14 @@ const Books = () => {
                 <p>
                   <strong>Publication Year:</strong> {book.publication_year}
                 </p>
-                <p className="description">
+                <p>
+                  <strong>Language:</strong> {book.language}
+                </p>
+                <p>
                   <strong>Description:</strong> {book.description}
                 </p>
                 <p>
-                  <strong>Language:</strong> {book.language}
+                  <strong>Quantity:</strong> {getQuantity(book.book_id)}
                 </p>
               </div>
             </div>

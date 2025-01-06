@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+CO+Guides&family=Playwrite+GB+S&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.home-book-description {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+  margin-left: 2rem;
+}
+
+.first-description-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #101420;
+  color: white;
+  padding: 1rem 15rem;
+  height: 75vh;
+  justify-content: center;
+}
+
+.description-pic-container {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+  align-items: center;
+}
+
+.home-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.home-description-text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: "Playwrite GB S", serif;
+}
+
+.quote-description {
+  height: 10%;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #f0c674;
+}
+
+/* Home Categories Section */
+.home-categories {
+  padding: 2rem 10%;
+  text-align: center;
+}
+
+.home-categories-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.home-category-authors,
+.home-category-genres,
+.home-category-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-category-authors-images,
+.home-category-books-images,
+.home-category-genres-images {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-pictures {
+  height: 400px;
+  width: 270px;
+  border: 10px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-pictures:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.home-category-authors-description,
+.home-category-books-description,
+.home-category-genres-description {
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+}
+
+.home-category-authors-description p,
+.home-category-books-description p,
+.home-category-genres-description p {
+  margin: 0;
+}
+
+.home-category-authors-description strong,
+.home-category-books-description strong,
+.home-category-genres-description strong {
+  color: #d2691e;
+}
+
+.home-category-authors button,
+.home-category-books button,
+.home-category-genres button {
+  background-color: #d2691e;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+/* Hover Effect */
+.home-category-authors button:hover,
+.home-category-books button:hover,
+.home-category-genres button:hover {
+  background-color: #357ab8;
+  transform: scale(1.05);
+}
+
+/* Link Styling */
+.home-category-authors button a,
+.home-category-books button a,
+.home-category-genres button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-category-authors-images,
+  .home-category-books-images,
+  .home-category-genres-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-pictures {
+    width: 90%;
+    height: auto;
+  }
+
+  .home-category-authors-description,
+  .home-category-books-description,
+  .home-category-genres-description {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .home-category-authors button,
+  .home-category-books button,
+  .home-category-genres button {
+    width: 100%;
+    text-align: center;
+  }
+}
