@@ -36,10 +36,8 @@ const Genres = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="card-front">
+              <div className="card-overlay">
                 <h3>{genre.name}</h3>
-              </div>
-              <div className="card-back">
                 <p>{genre.description}</p>
               </div>
             </div>
