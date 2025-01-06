@@ -26,10 +26,20 @@ const Authors = () => {
       {authors.length > 0 ? (
         <div className="authors-container">
           {authors.map((author) => (
-            <div key={author.author_id} className="author-card">
-              <button onClick={() => handleAuthorClick(author.author_id)}>
+            <div
+              key={author.author_id}
+              className="author-card"
+              onClick={() => handleAuthorClick(author.author_id)}
+              style={{
+                backgroundImage: `url(${author.image_url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="card-overlay">
                 <h3>{author.name}</h3>
-              </button>
+                <p>{author.description}</p>
+              </div>
             </div>
           ))}
         </div>

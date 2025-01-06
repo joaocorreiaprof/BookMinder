@@ -56,9 +56,17 @@ const Books = () => {
           {books.map((book) => (
             <div key={book.book_id} className="book-card">
               <div className="card-front">
-                <h3>{book.title}</h3>
+                {/* Book Cover Image */}
+                <img
+                  src={book.cover_image_url}
+                  alt={book.title}
+                  className="book-cover-image"
+                />
               </div>
               <div className="card-back">
+                <p>
+                  <strong>Title:</strong> {book.title}
+                </p>
                 <p>
                   <strong>Publisher:</strong> {book.publisher}
                 </p>

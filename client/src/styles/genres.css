@@ -1,11 +1,9 @@
-/* General styles for the page */
 .genres-page {
   padding: 40px 50px;
   background-color: #f4f4f4;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Title styling */
 .page-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -14,7 +12,6 @@
   text-align: center;
 }
 
-/* Container for the genre cards */
 .genres-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -22,7 +19,6 @@
   padding: 20px 0;
 }
 
-/* Styling for individual genre cards */
 .genre-card {
   width: 100%;
   height: 200px;
@@ -41,23 +37,63 @@
   position: relative;
 }
 
-/* Hover effect: subtle color change and scale-up */
 .genre-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Title styling for each genre */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  transition: background 0.3s ease;
+}
+
+.genre-card:hover .card-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .genre-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #fff;
   transition: color 0.3s ease;
+  margin-bottom: 10px;
 }
 
-/* If no genres are available */
+.genre-card p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fff;
+  opacity: 0.9;
+}
+
 .genres-page p {
   text-align: center;
   font-size: 1.2rem;
   color: #777;
+}
+
+@media (max-width: 768px) {
+  .genres-container {
+    grid-template-columns: 1fr;
+  }
+
+  .genre-card {
+    height: 250px;
+  }
+
+  .genre-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .genre-card p {
+    font-size: 1rem;
+  }
 }
