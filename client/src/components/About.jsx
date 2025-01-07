@@ -3,22 +3,24 @@ import "../styles/about.css";
 const About = () => {
   return (
     <div className="about-container">
-      <h1 className="about-title">About Us</h1>
+      <h1 className="about-title">About BookMinder</h1>
       <div className="about-description">
         <p>
-          Welcome to BookMinder! We are a passionate team dedicated to helping
-          book lovers like you manage and organize your book collections with
-          ease. Whether you are an avid reader, a bookstore owner, or a library
-          manager, BookMinder provides a user-friendly platform to track,
-          search, and explore books, authors, and genres.
+          Welcome to <strong>BookMinder</strong>—your ultimate solution for
+          managing and organizing book collections effortlessly! Whether you’re
+          an avid reader, a bookstore owner, or a library manager, BookMinder is
+          designed to make book inventory management a breeze.
         </p>
         <p>
-          Our goal is to provide an intuitive inventory management system that
-          helps you keep your collection organized while making it easier to
-          find the books, authors, and genres you are interested in. At
-          BookMinder, we believe in the power of books to inspire, educate, and
-          entertain. Join us today and start managing your book inventory like a
-          pro!
+          Our platform allows you to track, search, and explore books, authors,
+          and genres—all in one intuitive interface. We aim to provide a
+          seamless inventory management experience, helping you stay organized
+          while enhancing the joy of discovering and managing your collection.
+        </p>
+        <p>
+          At BookMinder, we believe in the power of books to inspire, educate,
+          and entertain. Join us today and take your library to the next level
+          by managing your book inventory like a pro!
         </p>
       </div>
     </div>

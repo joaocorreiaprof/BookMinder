@@ -45,18 +45,13 @@ const Books = () => {
   return (
     <div className="books-page">
       <h2 className="page-title">
-        {authorId
-          ? "Books in Selected Author:"
-          : genreId
-          ? "Books in Selected Genre:"
-          : "All Books:"}
+        {authorId ? "Author books:" : genreId ? "Genre books:" : "All Books:"}
       </h2>
       {books.length > 0 ? (
         <div className="books-container">
           {books.map((book) => (
             <div key={book.book_id} className="book-card">
               <div className="card-front">
-                {/* Book Cover Image */}
                 <img
                   src={book.cover_image_url}
                   alt={book.title}
