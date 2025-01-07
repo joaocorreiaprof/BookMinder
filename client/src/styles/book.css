@@ -26,7 +26,7 @@
 
 .book-details strong {
   font-weight: 700;
-  color: #2980b9; /* Blue for strong labels */
+  color: #2980b9;
 }
 
 .book-details p:last-child {
