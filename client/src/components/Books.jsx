@@ -10,7 +10,6 @@ const Books = () => {
   const genreId = searchParams.get("genre");
   const authorId = searchParams.get("author");
 
-  // Fetch books and inventory data
   useEffect(() => {
     let endpoint = "/api/books";
     if (genreId) {
@@ -20,7 +19,6 @@ const Books = () => {
       endpoint = `/api/books-by-author/${authorId}`;
     }
 
-    // Fetch books
     api
       .get(endpoint)
       .then((response) => {
@@ -28,7 +26,6 @@ const Books = () => {
       })
       .catch((error) => console.error("Error fetching books:", error));
 
-    // Fetch inventory for books
     api
       .get("/api/books-inventory")
       .then((response) => {
@@ -50,7 +47,11 @@ const Books = () => {
       {books.length > 0 ? (
         <div className="books-container">
           {books.map((book) => (
-            <div key={book.book_id} className="book-card">
+            <Link
+              to={`/book/${book.book_id}`}
+              key={book.book_id}
+              className="book-card"
+            >
               <div className="card-front">
                 <img
                   src={book.cover_image_url}
@@ -78,7 +79,7 @@ const Books = () => {
                   <strong>Quantity:</strong> {getQuantity(book.book_id)}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       ) : (

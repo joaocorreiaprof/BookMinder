@@ -7,6 +7,7 @@ import Books from "./components/Books";
 import Genres from "./components/Genres";
 import Authors from "./components/Authors";
 import Footer from "./components/Footer";
+import Book from "./components/Book";
 import "./styles/App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/books" element={<Books />} />
             <Route path="/genres" element={<Genres />} />
             <Route path="/authors" element={<Authors />} />
+            <Route path="/book/:bookId" element={<Book />} />
           </Routes>
         </div>
         <Footer />
