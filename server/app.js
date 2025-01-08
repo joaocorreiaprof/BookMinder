@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const pool = require("./db/db");
 
 // Route imports
@@ -17,9 +18,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Base route
+// Serve static files from the Vite build folder (dist)
+app.use(express.static(path.join(__dirname, "..", "client", "dist"))); // Serve static files
+
+// Base route to serve the frontend
 app.get("/", (req, res) => {
-  res.send("Welcome to the Inventory Application API!");
+  res.sendFile(path.join(__dirname, "..", "client", "dist", "index.html")); // Serve the entry point of your app
 });
 
 // API routes
