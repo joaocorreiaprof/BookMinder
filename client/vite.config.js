@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://localhost:8080", // Redirects API calls to your backend
+      "/api": "https://inventory-application-production-4de2.up.railway.app/", // Redirects API calls to your backend
     },
   },
 });
