@@ -17,11 +17,6 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Base route
-app.get("/", (req, res) => {
-  res.send("Welcome to the Inventory Application API!");
-});
-
 // API routes
 app.use("/api", booksRoutes);
 app.use("/api", authorsRoutes);
