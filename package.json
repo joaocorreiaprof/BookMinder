@@ -1,12 +1,15 @@
 {
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "server": "nodemon server/app.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm install && npm run install-client && npm run build-client",
+    "start": "concurrently \"npm run server\" \"npm --prefix client run dev\""
+  },
   "devDependencies": {
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9"
-  },
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm --prefix client run dev\"",
-    "server": "nodemon server/app.js",
-    "client": "npm run dev --prefix client"
   },
   "dependencies": {
     "express": "^4.21.2"
