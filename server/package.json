@@ -4,20 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server/app.js"
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "build-client": "cd client && npm run build",
+    "server": "npm run install-server && nodemon server/app.js",
+    "client": "npm run dev --prefix client",
+    "build": "npm install && npm run install-client && npm run install-server && npm run build-client",
+    "start": "concurrently \"npm run server\" \"npm --prefix client run dev\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "nodemon": "^3.1.9"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "express-validator": "^7.2.0",
-    "pg": "^8.13.1"
+    "express": "^4.21.2"
   }
 }
