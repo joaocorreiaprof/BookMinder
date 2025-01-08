@@ -58,14 +58,14 @@
 
 **Clone the repository:**
 
-git clone https://github.com/joaocorreiaprof/Inventory-Application
-cd Inventory-Aplication
-npm install
-cd server
-npm install
-cd ../client
-npm install
-npm start
+- git clone https://github.com/joaocorreiaprof/Inventory-Application
+- cd Inventory-Aplication
+- npm install
+- cd server
+- npm install
+- cd ../client
+- npm install
+- npm start
 
 ## Deployment
 
