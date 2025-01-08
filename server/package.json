@@ -7,9 +7,10 @@
     "install-client": "cd client && npm install",
     "install-server": "cd server && npm install",
     "build-client": "cd client && npm run build",
+    "build-server": "cd server && npm run build",
     "server": "npm run install-server && nodemon server/app.js",
     "client": "npm run dev --prefix client",
-    "build": "npm install && npm run install-client && npm run install-server && npm run build-client",
+    "build": "npm install && npm run install-client && npm run install-server && npm run build-server && npm run build-client",
     "start": "concurrently \"npm run server\" \"npm --prefix client run dev\""
   },
   "devDependencies": {
