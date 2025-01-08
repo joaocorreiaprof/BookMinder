@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from the Vite build folder (dist)
-app.use(express.static(path.join(__dirname, "..", "client", "dist"))); // Serve static files
+app.use(express.static(path.join(__dirname, "..", "client", "dist")));
 
 // Base route to serve the frontend
 app.get("/", (req, res) => {
