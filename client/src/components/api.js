@@ -1,11 +1,8 @@
-import axios from "axios";
+import { Pool } from "pg";
 
-const isLocal = window.location.hostname === "localhost"; // Check if running locally
-
-const api = axios.create({
-  baseURL: isLocal
-    ? "http://localhost:3000" // Local API endpoint
-    : "https://roundhouse.proxy.rlwy.net:50082/railway", // Railway API endpoint
+const pool = new Pool({
+  connectionString:
+    "postgresql://postgres:ggXHEvsGhREBtzyBOtRiehmYQGKQUDXt@roundhouse.proxy.rlwy.net:50082/railway",
 });
 
-export default api;
+export default pool;
