@@ -2,6 +2,10 @@
 
 **BookMinder** is a full-stack application for managing a book inventory, built with a **Node.js/Express** backend and a **React/Vite** frontend. The project leverages **PostgreSQL** for database management and **Railway** for deployment, showcasing various backend and frontend development skills, as well as additional work and research to connect the two systems and optimize the project.
 
+## Demo
+
+![Video Demo](./client/public/demo.mp4)
+
 ## Skills and Technologies
 
 - **Backend Development:**
