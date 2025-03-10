@@ -2,6 +2,12 @@
 
 **BookMinder** is a full-stack application for managing a book inventory, built with a **Node.js/Express** backend and a **React/Vite** frontend. The project leverages **PostgreSQL** for database management and **Railway** for deployment, showcasing various backend and frontend development skills, as well as additional work and research to connect the two systems and optimize the project.
 
+## Video Demo
+
+Check out this video demo of the site in action:
+
+![Video Demo](./client/public/demo.mp4)
+
 ## Skills and Technologies
 
 - **Backend Development:**
@@ -59,7 +65,7 @@
 **Clone the repository:**
 
 - git clone https://github.com/joaocorreiaprof/Inventory-Application
-- cd Inventory-Aplication
+- cd Inventory-Application
 - npm install
 - cd server
 - npm install
@@ -77,7 +83,7 @@ https://inventory-application-production-3863.up.railway.app/
 
 ## Future Improvements
 
-- Mobile and tablew view .
+- Mobile and tablet view.
 - Implementing user authentication with JWT (JSON Web Tokens) for secure login and access control.
 - Adding pagination or infinite scroll for better handling of large book inventories.
 - Integrating file upload functionality for book cover images to be dynamically added from the frontend.

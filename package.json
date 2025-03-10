@@ -5,7 +5,8 @@
     "server": "nodemon server/app.js",
     "client": "npm run dev --prefix client",
     "build": "npm install && npm run install-client && npm run build-client",
-    "start": "concurrently \"npm run server\" \"npm --prefix client run dev\""
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
