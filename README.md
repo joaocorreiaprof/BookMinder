@@ -63,7 +63,7 @@
 **Clone the repository:**
 
 - git clone https://github.com/joaocorreiaprof/Inventory-Application
-- cd Inventory-Aplication
+- cd Inventory-Application
 - npm install
 - cd server
 - npm install
@@ -81,7 +81,7 @@ https://inventory-application-production-3863.up.railway.app/
 
 ## Future Improvements
 
-- Mobile and tablew view .
+- Mobile and tablet view .
 - Implementing user authentication with JWT (JSON Web Tokens) for secure login and access control.
 - Adding pagination or infinite scroll for better handling of large book inventories.
 - Integrating file upload functionality for book cover images to be dynamically added from the frontend.
